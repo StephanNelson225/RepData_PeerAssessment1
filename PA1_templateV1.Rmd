@@ -32,7 +32,7 @@ median(a$x, na.rm=TRUE)
 ```
 
 The mean number of steps per day is 10,766 for the 53 days with the median being just slightly less at 10,765 steps. 
-```{r historgram1, fig.width=10, fig.path="figures/plot-"}
+```{r histogram1, fig.width=10, fig.path="figures/plot-"}
 require(ggplot2)
 p=ggplot(a, aes(x=a$x)) + geom_histogram(binwidth = 500) +
        xlab("Total Steps in the Day") + ylab("Number of Days with Steps") +
@@ -45,7 +45,7 @@ p
 The histogram in Figure 1 shows the general pattern of total steps per day. With the bin width of 500, the median value of 10,765 is found in bar just to the right of the tallest frequency bar where there are three days represented. 
 
 ##What is the daily activity pattern.
-```{r dailyactivitypattern, fig.width=10, fig.path="figures/plot-"}
+```{r dailyactivitypattern1, fig.width=10, fig.path="figures/plot-"}
 b<-aggregate(data$steps, by=list(data$interval), "mean", na.rm=TRUE)
 names(b)<-c("interval", "MeanSteps")
 bb<-b[order(-b$MeanSteps),]
@@ -93,7 +93,7 @@ data$steps[data$date=="2012-11-30"]<-b$MeanSteps
 ```
 
 
-```{r historgram2imputedvalues, fig.width=10, fig.path="figures/plot-"}
+```{r histogram2imputedvalues, fig.width=10, fig.path="figures/plot-"}
 aa<-aggregate(data$steps, by=list(data$date), FUN=sum)
 mean(aa$x, na.rm=TRUE)
 median(aa$x, na.rm=TRUE)
@@ -111,7 +111,7 @@ The mean is not changed as we replaced the missing days with days of average ste
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
-```{r weekdayweekend, fig.width=10, fig.path="figures/plot-"}
+```{r weekdayweekend1, fig.width=10, fig.path="figures/plot-"}
 require(plyr)
 require(reshape2)
 data$WeekId<-revalue(data$weekday, c("Mon" = "Weekday","Tues"="Weekday","Wed"="Weekday","Thurs"="Weekday","Fri"= "Weekday", "Sun"= "Weekend", "Sat" = "Weekend"))

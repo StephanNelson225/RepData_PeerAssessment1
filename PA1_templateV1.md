@@ -68,7 +68,7 @@ p=ggplot(a, aes(x=a$x)) + geom_histogram(binwidth = 500) +
 p
 ```
 
-![plot of chunk historgram1](figures/plot-historgram1.png) 
+![plot of chunk histogram1](figures/plot-histogram1.png) 
 The histogram in Figure 1 shows the general pattern of total steps per day. With the bin width of 500, the median value of 10,765 is found in bar just to the right of the tallest frequency bar where there are three days represented. 
 
 ##What is the daily activity pattern.
@@ -93,7 +93,7 @@ ggplot(aes(x=interval, y=MeanSteps), data=b) +
            "Noon", "Eleven\nFifty-Five PM"))
 ```
 
-![plot of chunk dailyactivitypattern](figures/plot-dailyactivitypattern.png) 
+![plot of chunk dailyactivitypattern1](figures/plot-dailyactivitypattern1.png) 
 The daily activity pattern calculation averages the 288 daily 5 minute intervals across the 53 days with monitor readings.  The interval with the highest average number of steps is the interval beginning 8:35 am.  As would be expected, early morning readings are extremely small, activity grows to a peak in the morning, generally varies widely within a band 25 step to 100 steps after that peak and through the early evening hours and then trails off markedly as midnight approaches.
 
 
@@ -167,7 +167,7 @@ p2=ggplot(aa, aes(x=aa$x)) + geom_histogram(binwidth = 500) +
 p2
 ```
 
-![plot of chunk historgram2imputedvalues](figures/plot-historgram2imputedvalues.png) 
+![plot of chunk histogram2imputedvalues](figures/plot-histogram2imputedvalues.png) 
 The mean is not changed as we replaced the missing days with days of average step intervals.  The median changed slightly as we added 8 mean values to the 53 days.  As can be seen in figure 3, the eight days were added to the median interval making it the most frequent with 11 days. 
 
 
@@ -191,7 +191,7 @@ ggplot(aes(x=as.integer(interval), y=value, group = WeekId), data=d) +
            facet_wrap(~WeekId, ncol=1) 
 ```
 
-![plot of chunk weekdayweekend](figures/plot-weekdayweekend.png) 
+![plot of chunk weekdayweekend1](figures/plot-weekdayweekend1.png) 
 
 ```r
 mean(c$MeanSteps[c$WeekId=="Weekend"])
