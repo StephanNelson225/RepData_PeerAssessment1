@@ -163,7 +163,7 @@ median(aa$x, na.rm=TRUE)
 ```r
 p2=ggplot(aa, aes(x=aa$x)) + geom_histogram(binwidth = 500) +
        xlab("Total Steps in the Day") + ylab("Number of Days with Steps") +
-       ggtitle("Figure 3: \nFrequency of Days by Total Daily Steps for All Daily Measurement Intervals\n October 1, 2012 to November 30, 2012")
+       ggtitle("Figure 3: \nFrequency of Days by Total Daily Steps for All Daily Measurement Intervals\n After Imputing Average Daily Pattern")
 p2
 ```
 
